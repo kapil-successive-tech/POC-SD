@@ -10,6 +10,7 @@ import '../styles/style.css';
 import 'react-loading-skeleton/dist/skeleton.css';
 import '@contentstack/live-preview-utils/dist/main.css';
 import { Props } from "../typescript/pages";
+import '../styles/globals.css';
 
 
 Router.events.on('routeChangeStart', () => NProgress.start());
@@ -74,10 +75,11 @@ function MyApp(props: Props) {
 MyApp.getInitialProps = async (appContext: any) => {
   const appProps = await App.getInitialProps(appContext);
   const header = await getHeaderRes();
-  const footer = await getFooterRes();
-  const entries = await getAllEntries();
+  // const footer = await getFooterRes();
+  // const entries = await getAllEntries();
 
-  return { ...appProps, header, footer, entries };
+  // return { ...appProps, header, footer, entries };
+  return {...appProps, header};
 };
 
 export default MyApp;
