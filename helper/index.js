@@ -12,8 +12,7 @@ const liveEdit = envConfig.CONTENTSTACK_LIVE_EDIT_TAGS === 'true';
 export const getHeaderRes = async () => {
   const response = await Stack.getEntry({
     contentTypeUid: 'header',
-    referenceFieldPath: ['navigation_menu.page_reference'],
-    jsonRtePath: ['notification_bar.announcement_text'],
+    referenceFieldPath: ['navigation_menu.upper_nav.page_reference']
   });
 
   liveEdit && addEditableTags(response[0][0], 'header', true);
@@ -54,6 +53,7 @@ export const getPageRes = async (entryUrl) => {
   });
   liveEdit && addEditableTags(response[0], 'page', true);
   return response[0];
+  // return ;
 };
 
 export const getBlogListRes = async () => {

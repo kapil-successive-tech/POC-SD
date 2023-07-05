@@ -62,13 +62,13 @@ export default function Layout({
   return (
     <>
       {header ? <Header header={getLayout.header} entries={entries} /> : ''}
-      <main className='mainClass'>
+      {/* <main className='mainClass'>
         <>
         {children}
         {Object.keys(jsonObj).length && <DevTools response={jsonObj} />}
         </>
-      </main>
-      {footer ? <Footer footer={getLayout.footer} entries={entries} /> : ''}
+      </main> */}
+      {/* {footer ? <Footer footer={getLayout.footer} entries={entries} /> : ''} */}
     </>
   );
 }
