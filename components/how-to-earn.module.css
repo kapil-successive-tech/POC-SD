@@ -29,3 +29,13 @@
     top: -10px;
     opacity: .7;
 }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .way_wrapper .csCol{ 
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .way_wrapper .middle_bar:after{
+        content:none;
+    }
+}

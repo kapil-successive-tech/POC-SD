@@ -3,6 +3,7 @@ import React from 'react';
 import HeroSection from './hero-section';
 import { RenderProps } from "../typescript/component";
 import HowToEarn from './how-to-earn';
+import Footer from './footerN';
 
 export default function RenderComponents(props: RenderProps) {
   const { pageComponents, blogPost, entryUid, contentTypeUid, locale } = props;
@@ -29,6 +30,7 @@ export default function RenderComponents(props: RenderProps) {
           return null;
         }
       })}
+      <Footer />
     </div>
   );
 }
