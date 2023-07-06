@@ -52,6 +52,10 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
       onEntryChange(() => fetchData());
     }
   }, [header]);
+
+  function handleLocale(lang:string) {
+    setLocale(lang);
+  }
   const headerData = getHeader ? getHeader : undefined;
 
   return headerData ?
@@ -69,7 +73,12 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
           <div className={styles.nav_top_right}>
             <div className="d-flex align-items-center">
               {headerData.navigation_menu.upper_nav.map((value, key) => {
-                return <>{value.left_icon && <Image src={require(`../images/${value.icon_name}.svg`)} alt="Icon" width="30px" />} <a href="#"  className="mr-2">{value.label}</a></>
+                return <>
+                  {value.locale_lang && <>
+                    {value.left_icon && <Image src={require(`../images/${value.icon_name}.svg`)} alt="Icon" width="30px" />}
+                    <button type='button' className={`mr-2 ${styles.locale_button}`} onClick={() => handleLocale(value.locale_lang)}>{value.label}</button>
+                  </>}
+                  {!value.locale_lang && <a href="#" className="mr-2">{value.label}</a>}</>
               })}
             </div>
           </div>
