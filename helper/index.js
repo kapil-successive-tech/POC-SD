@@ -40,40 +40,12 @@ export const getAllEntries = async () => {
   return response[0];
 };
 
-export const getPageRes = async (entryUrl) => {
+export const getPageRes = async (entryUrl, locale = 'en-us') => {
   const response = await Stack.getEntryByUrl({
     contentTypeUid: 'page',
     entryUrl,
-    // referenceFieldPath: ['page_components.from_blog.featured_blogs'],
-    // jsonRtePath: [
-    //   'page_components.from_blog.featured_blogs.body',
-    //   'page_components.section_with_buckets.buckets.description',
-    //   'page_components.section_with_html_code.description',
-    // ],
+    locale,
   });
   liveEdit && addEditableTags(response[0], 'page', true);
-  return response[0];
-  // return ;
-};
-
-export const getBlogListRes = async () => {
-  const response = await Stack.getEntry({
-    contentTypeUid: 'blog_post',
-    referenceFieldPath: ['author', 'related_post'],
-    jsonRtePath: ['body'],
-  });
-  liveEdit &&
-    response[0].forEach((entry) => addEditableTags(entry, 'blog_post', true));
-  return response[0];
-};
-
-export const getBlogPostRes = async (entryUrl) => {
-  const response = await Stack.getEntryByUrl({
-    contentTypeUid: 'blog_post',
-    entryUrl,
-    referenceFieldPath: ['author', 'related_post'],
-    jsonRtePath: ['body', 'related_post.body'],
-  });
-  liveEdit && addEditableTags(response[0], 'blog_post', true);
   return response[0];
 };

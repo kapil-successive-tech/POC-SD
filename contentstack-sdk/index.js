@@ -41,6 +41,7 @@ const renderOption = {
   span: (node, next) => next(node.children),
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   /**
    *
@@ -50,9 +51,10 @@ export default {
    * @param {* Json RTE path} jsonRtePath
    *
    */
-  getEntry({ contentTypeUid, referenceFieldPath, jsonRtePath }) {
+  getEntry({ contentTypeUid, referenceFieldPath, jsonRtePath, locale = 'en-us' }) {
     return new Promise((resolve, reject) => {
       const query = Stack.ContentType(contentTypeUid).Query();
+      query.language(locale);
       if (referenceFieldPath) query.includeReference(referenceFieldPath);
       query
         .includeOwner()
@@ -85,10 +87,11 @@ export default {
    * @returns
    */
   getEntryByUrl({
-    contentTypeUid, entryUrl, referenceFieldPath, jsonRtePath,
+    contentTypeUid, entryUrl, referenceFieldPath, jsonRtePath, locale = 'en-us'
   }) {
     return new Promise((resolve, reject) => {
       const blogQuery = Stack.ContentType(contentTypeUid).Query();
+      blogQuery.language(locale);
       if (referenceFieldPath) blogQuery.includeReference(referenceFieldPath);
       blogQuery.includeOwner().toJSON();
       const data = blogQuery.where('url', `${entryUrl}`).find();
