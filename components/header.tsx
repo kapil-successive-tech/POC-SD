@@ -11,6 +11,8 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
 
   const router = useRouter();
   const [getHeader, setHeader] = useState(header);
+  const [isActive, setIsActive] = useState(false);
+
 
   function buildNavigation(ent: Entry, hd: HeaderProps) {
     let newHeader = { ...hd };
@@ -52,6 +54,14 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
   }, [header]);
   const headerData = getHeader ? getHeader : undefined;
 
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
+
+  const containerClasses = isActive ? 'right_nav active' : 'right_nav';
+
+
   return headerData ?
     <header id="site_header" className={styles.site_header}>
       <nav className={styles.navbar}>
@@ -63,7 +73,13 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
             {...headerData.logo.$?.url as {}} />
         </a>
 
-        <div className="right_nav">
+        <span  onClick={handleClick} className="reponsive-menu">
+             <span></span>
+             <span></span>
+             <span></span>
+        </span>
+        
+        <div className={containerClasses}>
           <div className={styles.nav_top_right}>
             <div className="d-flex align-items-center">
               {headerData.navigation_menu.upper_nav.map((value, key) => {
@@ -83,6 +99,7 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
             </div>
           </div>
         </div>
+         
       </nav>
     </header> : <div></div>
 }

@@ -21,7 +21,7 @@ const HowToEarn = ({ content }: { content: any }) => {
                                     <strong className="ff400 d-block mb-2">{card.subtitle_h3}</strong>
                                     <div className="row justify-content-center pt-4 mb-4 pb-3 ">
                                         {card.buckets.map((bucket: any, key: any) => {
-                                            return <div className="col-4" key={`bucket-${bucket.title_h3}`}>
+                                            return <div className="got-rewarded-cards col-4" key={`bucket-${bucket.title_h3}`}>
                                                 <figure className={styles.icon_figure}>
                                                     <figcaption className="ff700" style={{textTransform: 'uppercase'}}>
                                                         {bucket.top_title}

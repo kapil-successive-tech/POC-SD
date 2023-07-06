@@ -128,6 +128,11 @@ footer a {
   padding: 5px;
   text-align: center;
 }
+.right_nav
+{
+  transition: transform 0.3s ease;
+
+}
 
 
 
@@ -171,7 +176,9 @@ footer a {
 .team-details {
   padding: 0px 15px;
 }
-
+.got-rewarded-cards figcaption{
+   margin-bottom: 10px;
+}
 
 /* ========================== */
 
@@ -393,6 +400,59 @@ footer a {
   .hero-image-wrap span{
     width:45% !important;
     height:200px !important;
+  }
+
+  .right_nav{
+  position: fixed;
+  top: 0;
+  left: -320px; /* Initially hide the menu */
+  width: 320px;
+  height: 100%;
+  background-color: #303030;
+  transition: left 0.3s ease;
+  z-index: 9999;
+  padding:25px;
+  }
+  header nav{
+      text-align: left;
+  }
+  .nav-brand img{
+     width: 90px;
+  }
+  .right_nav.active{
+    left: 0;
+  }
+
+  .right_nav.active .d-flex{
+      display: block !important;
+  }
+  .right_nav.active span{
+    display: none !important;
+  }
+  .reponsive-menu{
+    width:40px;
+  }
+  .reponsive-menu span{
+     border:2px solid #fff;
+     margin-bottom: 5px;
+     display: block;
+  }
+  .hero-section-wrap{
+    padding:50px 0 0;
+  }
+  section.how_to_earn.cs_pt.text-center{
+    padding-top: 3rem;
+  }
+  .hero-section-wrap h2{
+    font-size: 35px;
+  }
+  .hero-section-wrap p{
+    font-size: 18px;
+  }
+  .got-rewarded-cards.col-4{
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 25px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
