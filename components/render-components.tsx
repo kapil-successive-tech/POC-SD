@@ -3,7 +3,6 @@ import React from 'react';
 import HeroSection from './hero-section';
 import { RenderProps } from "../typescript/component";
 import HowToEarn from './how-to-earn';
-import Footer from './footerN';
 import MembershipTiers from './membership-tiers';
 
 export default function RenderComponents(props: RenderProps) {

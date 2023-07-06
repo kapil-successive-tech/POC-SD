@@ -48,7 +48,6 @@ export default function Footer({ footer, entries }: {footer: FooterProps, entrie
     }, [footer]);
   
     const footerData = getFooter ? getFooter : undefined;
-    console.log(footerData?.navigation?.link)
     
     return (<>{footerData &&
       <div className='footer-section-wrap'>
