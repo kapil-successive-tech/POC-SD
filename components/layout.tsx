@@ -65,7 +65,6 @@ export default function Layout({
       <main className='mainClass'>
         <>
         {children}
-        {Object.keys(jsonObj).length && <DevTools response={jsonObj} />}
         </>
       </main>
       {/* {footer ? <Footer footer={getLayout.footer} entries={entries} /> : ''} */}

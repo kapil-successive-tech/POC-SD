@@ -12,7 +12,7 @@ const liveEdit = envConfig.CONTENTSTACK_LIVE_EDIT_TAGS === 'true';
 export const getHeaderRes = async () => {
   const response = await Stack.getEntry({
     contentTypeUid: 'header',
-    referenceFieldPath: ['navigation_menu.upper_nav.page_reference']
+    referenceFieldPath: ['navigation_menu.upper_nav.page_reference'],
   });
 
   liveEdit && addEditableTags(response[0][0], 'header', true);
@@ -44,12 +44,12 @@ export const getPageRes = async (entryUrl) => {
   const response = await Stack.getEntryByUrl({
     contentTypeUid: 'page',
     entryUrl,
-    referenceFieldPath: ['page_components.from_blog.featured_blogs'],
-    jsonRtePath: [
-      'page_components.from_blog.featured_blogs.body',
-      'page_components.section_with_buckets.buckets.description',
-      'page_components.section_with_html_code.description',
-    ],
+    // referenceFieldPath: ['page_components.from_blog.featured_blogs'],
+    // jsonRtePath: [
+    //   'page_components.from_blog.featured_blogs.body',
+    //   'page_components.section_with_buckets.buckets.description',
+    //   'page_components.section_with_html_code.description',
+    // ],
   });
   liveEdit && addEditableTags(response[0], 'page', true);
   return response[0];

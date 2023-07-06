@@ -276,7 +276,10 @@ a:focus {
 .d-flex{
   display: flex;
 }
-.d-inline-flex{
+.flex-direction-column {
+  flex-direction: column;
+}
+.d-inline-flex {
   display: inline-flex;
 }
 .justify-content-center{

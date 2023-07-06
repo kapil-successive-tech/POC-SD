@@ -1,0 +1,428 @@
+@import "./json-preview.css";
+@import "./tool-tip.css";
+
+body {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  line-height: 22px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+  letter-spacing: 0.2px;
+}
+
+.max-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.note-div {
+  background: #f2efff;
+}
+
+.note-div p {
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px 0;
+  color: #222222;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 23px 30px;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+
+nav ul li a {
+  font-weight: 600;
+}
+
+.top-section h2, .top-section p {
+  margin: 6px 0;
+  padding: 0;
+}
+
+header {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+header .max-width {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .wrapper-logo {
+  flex: 0 0 170px;
+  margin: 20px 0;
+}
+
+header .wrapper-logo img {
+  width: 130px;
+}
+
+header nav {
+  flex: 1 1 100%;
+  text-align: right;
+}
+
+.header-div {
+  height: 70px;
+}
+
+.header-ul {
+  overflow: hidden;
+}
+
+header nav li a:hover, header nav li a.active {
+  color: #715cdd;
+}
+
+.header-ul .hamburger-icon {
+  display: none;
+}
+
+footer {
+  margin-top: 75px;
+  background: #fff;
+}
+
+footer a {
+  color: #222222;
+  padding: 12px;
+}
+
+.footer-div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.footer-nav-li {
+  padding: 0;
+}
+
+.col-half {
+  margin: auto;
+}
+
+.col-quarter {
+  display: inline-block;
+  margin: auto 0;
+}
+
+.copyright {
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+/* home page */
+
+.hero-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+
+  .grid {
+    margin-top: 2rem;
+    display: flex;
+    column-gap: 2rem;
+  }
+}
+
+.hero-section-container p {
+  padding: 0 26.5rem;
+  text-align: center;
+}
+
+
+
+
+/* home page ends here */
+
+.team-details {
+  padding: 0px 15px;
+}
+
+
+/* ========================== */
+
+/*          Mobile            */
+
+/* ========================== */
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .header {
+    height: 70px;
+    background-color: #fff;
+  }
+
+  .header-div {
+    height: auto;
+  }
+
+  .footer-div {
+    flex-direction: column;
+  }
+
+  .col-half {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .col-quarter {
+    padding: 15px 0;
+  }
+
+  .footer-nav-li {
+    padding: 7px;
+  }
+
+  .nav-ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  .header li a {
+    display: block;
+    padding: 0 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+  }
+
+  .header li a:hover, .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+
+  /* menu */
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .header .header-div {
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .header .wrapper-logo {
+    float: left;
+    margin-left: 15px;
+  }
+
+  .menu-icon {
+    float: right;
+    margin-top: 2px;
+  }
+
+  /* menu icon */
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
+
+  .header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
+    background: #333;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  .header .menu-btn:checked~nav {
+    max-height: 240px;
+    overflow: auto;
+  }
+
+  .header .menu-btn:checked~.menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked~.menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked~.menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before, .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  nav ul li {
+    padding: 15px 0;
+  }
+
+  h1 h2 h3 h4 {
+    font-weight: bold;
+    letter-spacing: 0.1px;
+  }
+
+  .btn {
+    border: none;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    border-radius: 2px;
+    letter-spacing: 0.3px;
+    padding: 8px 21px;
+  }
+
+  .secondary-btn {
+    border: 1px solid #715cdd;
+    color: #715cdd;
+  }
+
+
+
+
+
+
+
+
+}
+
+/* ========================== */
+
+/*          Tablet            */
+
+/* ========================== */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body p {
+    color: #444444;
+  }
+
+  .btn {
+    border: none;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 2px;
+    letter-spacing: 0.3px;
+    padding: 11px 17px;
+  }
+
+  .secondary-btn {
+    border: 1px solid #715cdd;
+    color: #715cdd;
+  }
+
+  body h1 {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0.1px;
+  }
+
+  body h2 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+  }
+
+  body h3, body h4 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  header nav {
+    display: block;
+  }
+
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e0e2e8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #eee;
+}
+
+/* scroll end */
+
+/* json preview css*/
+
+.data-key {
+  color: #C8501E !important;
+}
+
+.data-key svg{
+  color: #002b36;  
+}
+
+.MuiBox-root {
+  color: #002b36;
+}
+
+.string-value  span{
+  color: #5d9ccb !important;
+}
