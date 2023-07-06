@@ -1,0 +1,19 @@
+.membership_tiers_container {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  margin: 4rem 0;
+}
+.membership_tiers_container h2{
+   margin-bottom: 35px;
+   text-align: center;
+}
+.membership_tiers_container .tables {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 4rem; */
+  margin:0 4rem;
+}
