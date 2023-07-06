@@ -1,0 +1,10 @@
+.table {
+  border: 1px solid #909090;
+  border-spacing: 0.75rem;
+}
+
+.table_cell {
+  margin: 0.75rem;
+  border-bottom: 1px solid #909090;
+  padding: 0.5rem;
+}
