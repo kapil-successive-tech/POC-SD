@@ -25,16 +25,16 @@ export default function Home(props: Props) {
     onEntryChange(() => fetchData());
   }, []);
 
-  // return getEntry ? (
-  //   <RenderComponents
-  //     pageComponents={getEntry.page_components}
-  //     contentTypeUid='page'
-  //     entryUid={getEntry.uid}
-  //     locale={getEntry.locale}
-  //   />
-  // ) : (
-  //   <Skeleton count={3} height={300} />
-  // );
+  return getEntry ? (
+    <RenderComponents
+      pageComponents={getEntry.page_components}
+      contentTypeUid='page'
+      entryUid={getEntry.uid}
+      locale={getEntry.locale}
+    />
+  ) : (
+    <Skeleton count={3} height={300} />
+  );
 }
 
 export async function getServerSideProps(context: Context) {

@@ -22,5 +22,12 @@
     font-size: 14px;
 }
 .nav_bottom_right{ 
+    display: flex; 
     padding-top:2rem;
+}
+.nav_bottom_right a+a::before,.a_bar a+a::before{
+    content: '|';
+    margin: 0 15px;
+    /* line-height: 0.7; */
+    font-size: 14px;
 }
