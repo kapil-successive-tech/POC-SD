@@ -53,7 +53,7 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
     }
   }, [header]);
 
-  function handleLocale(lang:string) {
+  function handleLocale(lang: string) {
     setLocale(lang);
   }
   const headerData = getHeader ? getHeader : undefined;
@@ -78,7 +78,11 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
                     {value.left_icon && <Image src={require(`../images/${value.icon_name}.svg`)} alt="Icon" width="30px" />}
                     <button type='button' className={`mr-2 ${styles.locale_button}`} onClick={() => handleLocale(value.locale_lang)}>{value.label}</button>
                   </>}
-                  {!value.locale_lang && <a href="#" className="mr-2">{value.label}</a>}</>
+                  {!value.locale_lang &&
+                    <>
+                      {value.left_icon && <Image src={require(`../images/${value.icon_name}.svg`)} alt="Icon" width="30px" />}
+                      <a href="#" className="mr-2">{value.label}</a></>}
+                </>
               })}
             </div>
           </div>
