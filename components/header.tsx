@@ -1,20 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import parse from 'html-react-parser';
-import Tooltip from './tool-tip';
 import { onEntryChange } from '../contentstack-sdk';
 import { getHeaderRes } from '../helper';
-import Skeleton from 'react-loading-skeleton';
 import { HeaderProps, Entry, NavLinks } from "../typescript/layout";
 import styles from './header.module.css';
 import Image from 'next/image';
-// import myLogo from '../../images/GoToPass logo 1.svg';  
-import icon1 from '../images/icon1.svg';
-import icon2 from '../images/icon2.svg';
-import icon3 from '../images/icon3.svg';
-
 
 export default function Header({ header, entries }: { header: HeaderProps, entries: Entry }) {
 
@@ -76,7 +67,6 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
           <div className={styles.nav_top_right}>
             <div className="d-flex align-items-center">
               {headerData.navigation_menu.upper_nav.map((value, key) => {
-                console.log(value);
                 return <>{value.left_icon && <Image src={require(`../images/${value.icon_name}.svg`)} alt="Icon" width="30px" />} <a href="#"  className="mr-2">{value.label}</a></>
               })}
             </div>

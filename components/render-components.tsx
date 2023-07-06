@@ -25,7 +25,7 @@ export default function RenderComponents(props: RenderProps) {
         //   return <MembersBenefits key={`component-${key}`} banner={{ banner_description: component.members_benefits.description, banner_title: component.members_benefits.title }} />
         // }
         // if(true){
-          return <HowToEarn />
+          return <HowToEarn content={component.section_with_buckets}/>
         // }
         
 
