@@ -2,6 +2,7 @@ import React from 'react';
 
 import HeroSection from './hero-section';
 import { RenderProps } from "../typescript/component";
+import HowToEarn from './how-to-earn';
 
 export default function RenderComponents(props: RenderProps) {
   const { pageComponents, blogPost, entryUid, contentTypeUid, locale } = props;
@@ -19,7 +20,7 @@ export default function RenderComponents(props: RenderProps) {
           return null;
         }
         if (component.section_with_buckets) {
-          return null;
+          return <HowToEarn content={component.section_with_buckets}/>;
         }
         if (component.section_with_tables) {
           return null;

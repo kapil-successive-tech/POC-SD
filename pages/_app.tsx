@@ -76,10 +76,10 @@ MyApp.getInitialProps = async (appContext: any) => {
   const appProps = await App.getInitialProps(appContext);
   const header = await getHeaderRes();
   // const footer = await getFooterRes();
-  // const entries = await getAllEntries();
+  const entries = await getAllEntries();
 
   // return { ...appProps, header, footer, entries };
-  return {...appProps, header};
+  return {...appProps, header, entries};
 };
 
 export default MyApp;

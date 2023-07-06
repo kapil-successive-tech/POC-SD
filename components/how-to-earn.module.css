@@ -1,0 +1,31 @@
+.way_wrapper{
+    padding-top: 3.5rem;
+}
+.icon_figure .cs_ratio{ 
+    max-width: 130px; 
+    margin-bottom: 1rem;
+}
+.none {
+    border: 1px solid red !important;
+}
+.way_wrapper .csCol{ 
+    flex:0 0 45%;
+    max-width: 45%;   
+}
+.way_wrapper .csCol figcaption p{ 
+    padding-top: 1rem;
+    font-size: 22px;
+}
+.way_wrapper .middle_bar{
+    position: relative;
+}
+.way_wrapper .middle_bar:after{
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: currentColor;
+    left: 50%;
+    position: absolute;
+    top: -10px;
+    opacity: .7;
+}

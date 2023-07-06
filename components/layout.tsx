@@ -61,13 +61,13 @@ export default function Layout({
 
   return (
     <>
-      {/* {header ? <Header header={getLayout.header} entries={entries} /> : ''} */}
+      {header ? <Header header={getLayout.header} entries={entries} /> : ''}
       <main className='mainClass'>
         <>
         {children}
         </>
       </main>
-      {footer ? <Footer footer={getLayout.footer} entries={entries} /> : ''}
+      {/* {footer ? <Footer footer={getLayout.footer} entries={entries} /> : ''} */}
     </>
   );
 }

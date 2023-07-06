@@ -53,6 +53,7 @@ export const getPageRes = async (entryUrl) => {
   });
   liveEdit && addEditableTags(response[0], 'page', true);
   return response[0];
+  // return ;
 };
 
 export const getBlogListRes = async () => {

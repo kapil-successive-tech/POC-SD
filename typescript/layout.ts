@@ -83,12 +83,24 @@ export type HeaderProps = {
 export type Entry = [
   entry: EntryData
 ]
-
-type List = {
+type UpperNav = {
   label?: string;
   page_reference: [PageRef];
   $: {};
   href?: string;
+  left_icon: boolean;
+}
+type LowerNav = {
+  label?: string;
+  page_reference: [PageRef];
+  $: {};
+  href?: string;
+  left_icon: boolean;
+  highlighted: boolean;
+}
+type List = {
+  upper_nav: [UpperNav];
+  lower_nav: [LowerNav];
 }
 
 export type NavLinks = {
@@ -118,7 +130,7 @@ export type FooterProps = {
   navigation: Navigation;
   copyright: string;
   locale: string, 
-  navigation_menu: [List];
+  navigation_menu: List;
   notification_bar: Announcement; 
   uid: string;
   $: AdditionalParam;
