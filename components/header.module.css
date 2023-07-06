@@ -31,3 +31,9 @@
     /* line-height: 0.7; */
     font-size: 14px;
 }
+
+.locale_button{
+    color: var(--white);
+    background: transparent;
+    border: none;
+}

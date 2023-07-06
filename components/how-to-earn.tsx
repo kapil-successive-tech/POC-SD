@@ -16,6 +16,7 @@ const HowToEarn = ({ content }: { content: any }) => {
                     <div className={styles.way_wrapper}>
                         <div className={`row justify-content-between ${content.cards.length > 1 && styles.middle_bar} `}>
                             {content.cards.map((card: any, key: any) => {
+                                console.log('card length ', card.buckets.length)
                                 return <div className={`${content.cards.length > 1 && styles.csCol}`} key={`card-${card.title_h2}`}>
                                     <h3 className="ff700 mb-2">{card.title_h3}</h3>
                                     <strong className="ff400 d-block mb-2">{card.subtitle_h3}</strong>

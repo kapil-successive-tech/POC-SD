@@ -1,8 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { onEntryChange } from '../contentstack-sdk';
 import { getHeaderRes } from '../helper';
+import { LanguageContext } from '../context';
 import { HeaderProps, Entry, NavLinks } from "../typescript/layout";
 import styles from './header.module.css';
 import Image from 'next/image';
@@ -10,6 +11,7 @@ import Image from 'next/image';
 export default function Header({ header, entries }: { header: HeaderProps, entries: Entry }) {
 
   const router = useRouter();
+  const { locale, setLocale } = useContext(LanguageContext);
   const [getHeader, setHeader] = useState(header);
 
   function buildNavigation(ent: Entry, hd: HeaderProps) {
@@ -50,6 +52,10 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
       onEntryChange(() => fetchData());
     }
   }, [header]);
+
+  function handleLocale(lang: string) {
+    setLocale(lang);
+  }
   const headerData = getHeader ? getHeader : undefined;
 
   return headerData ?
@@ -67,7 +73,16 @@ export default function Header({ header, entries }: { header: HeaderProps, entri
           <div className={styles.nav_top_right}>
             <div className="d-flex align-items-center">
               {headerData.navigation_menu.upper_nav.map((value, key) => {
-                return <>{value.left_icon && <Image src={require(`../images/${value.icon_name}.svg`)} alt="Icon" width="30px" />} <a href="#"  className="mr-2">{value.label}</a></>
+                return <>
+                  {value.locale_lang && <>
+                    {value.left_icon && <Image src={require(`../images/${value.icon_name}.svg`)} alt="Icon" width="30px" />}
+                    <button type='button' className={`mr-2 ${styles.locale_button}`} onClick={() => handleLocale(value.locale_lang)}>{value.label}</button>
+                  </>}
+                  {!value.locale_lang &&
+                    <>
+                      {value.left_icon && <Image src={require(`../images/${value.icon_name}.svg`)} alt="Icon" width="30px" />}
+                      <a href="#" className="mr-2">{value.label}</a></>}
+                </>
               })}
             </div>
           </div>

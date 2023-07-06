@@ -31,7 +31,6 @@ export default function RenderComponents(props: RenderProps) {
           return null;
         }
       })}
-      <Footer />
     </div>
   );
 }
