@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import Layout from '../components/layout';
+import { LanguageProvider } from '../context';
 import { getHeaderRes, getFooterRes, getAllEntries } from '../helper';
 import 'nprogress/nprogress.css';
 import '../styles/third-party.css';
@@ -58,16 +59,18 @@ function MyApp(props: Props) {
         <title>Contentstack-Nextjs-Starter-App</title>
         {page?.seo && page.seo.enable_search_indexing && metaData(page.seo)}
       </Head>
-      <Layout
-        header={header}
-        footer={footer}
-        page={page}
-        blogPost={blogPost}
-        blogList={blogList}
-        entries={entries}
-      >
-        <Component {...pageProps} />
-      </Layout>
+      <LanguageProvider>
+        <Layout
+          header={header}
+          footer={footer}
+          page={page}
+          blogPost={blogPost}
+          blogList={blogList}
+          entries={entries}
+        >
+          <Component {...pageProps} />
+        </Layout>
+      </LanguageProvider>
     </>
   );
 }

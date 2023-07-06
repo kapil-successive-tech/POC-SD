@@ -1,8 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { onEntryChange } from '../contentstack-sdk';
 import { getHeaderRes } from '../helper';
+import { LanguageContext } from '../context';
 import { HeaderProps, Entry, NavLinks } from "../typescript/layout";
 import styles from './header.module.css';
 import Image from 'next/image';
@@ -10,6 +11,7 @@ import Image from 'next/image';
 export default function Header({ header, entries }: { header: HeaderProps, entries: Entry }) {
 
   const router = useRouter();
+  const { locale, setLocale } = useContext(LanguageContext);
   const [getHeader, setHeader] = useState(header);
 
   function buildNavigation(ent: Entry, hd: HeaderProps) {
