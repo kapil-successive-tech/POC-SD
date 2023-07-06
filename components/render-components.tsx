@@ -1,14 +1,6 @@
 import React from 'react';
 
-// import Section from './section';
-// import HeroBanner from './hero-banner';
-// import BlogBanner from './blog-banner';
-// import CardSection from './card-section';
-// import TeamSection from './team-section';
-// import BlogSection from './blog-section';
-// import SectionBucket from './section-bucket';
-// import AboutSectionBucket from './about-section-bucket';
-// import SectionWithHtmlCode from './section-with-html-code';
+import HeroSection from './hero-section';
 import { RenderProps } from "../typescript/component";
 
 export default function RenderComponents(props: RenderProps) {
@@ -21,7 +13,7 @@ export default function RenderComponents(props: RenderProps) {
     >
       {pageComponents?.map((component: any, key: number) => {
         if (component.hero_section) {
-          return null;
+          return <HeroSection {...component.hero_section} key={`component-${key}`} />;
         }
         if (component.section_with_cards) {
           return null;
