@@ -223,6 +223,9 @@ a:focus {
 .d-flex {
   display: flex;
 }
+.flex-direction-column {
+  flex-direction: column;
+}
 .d-inline-flex {
   display: inline-flex;
 }
