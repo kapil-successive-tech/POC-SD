@@ -133,45 +133,14 @@ footer a {
 
 /* home page */
 
-.hero-section-wrap{
-  text-align: center;
-  padding:80px 0 0;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
-  margin-top: 3rem;
-
-  .grid {
-    margin-top: 2rem;
-    display: flex;
-    column-gap: 2rem;
-  } */
-}
-.hero-image-wrap {
-     display: flex;
-     justify-content: space-between;
-     flex-wrap: wrap;
-}
-.hero-image-wrap span{
-  width:32% !important;
-  height: 300px !important;
-  margin-bottom: 25px !important;
-}
-.hero-section-container p {
-  padding: 0 15px;
-  text-align: center;
-  max-width: 850px;
-}
-
-
-
 /* home page ends here */
 
 .team-details {
   padding: 0px 15px;
 }
-
+.got-rewarded-cards figcaption{
+   margin-bottom: 10px;
+}
 
 /* ========================== */
 
@@ -213,6 +182,9 @@ footer a {
   margin-right: 25px;
 }
 
+.got-rewarded-cards{
+  margin-bottom: 25px;
+}
 .brands {
   display: flex;
   justify-content: center;
@@ -396,18 +368,71 @@ footer a {
     color: #715cdd;
   }
 
-
+  .row{
+    margin: 0 !important;
+  }
   /* Hero Section */
 
-  .hero-image-wrap span{
-    width:45% !important;
-    height:200px !important;
+
+  .right_nav{
+  position: fixed;
+  top: 0;
+  left: -320px; /* Initially hide the menu */
+  width: 320px;
+  height: 100%;
+  background-color: #303030;
+  transition: left 0.3s ease;
+  z-index: 9999;
+  padding: 25px 35px 25px 25px;
+
   }
-}
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .hero-image-wrap span{
-    width: 100% !important;
+  header nav{
+      text-align: left;
   }
+  .nav-brand img{
+     width: 90px;
+  }
+  .right_nav.active{
+    left: 0;
+  }
+
+  .right_nav.active .d-flex{
+      display: block !important;
+  }
+  .right_nav.active span{
+    display: none !important;
+  }
+  .reponsive-menu{
+    width:40px;
+  }
+  .reponsive-menu span{
+     border:2px solid #fff;
+     margin-bottom: 5px;
+     display: block;
+  }
+  /* .hero-section-wrap{
+    padding:50px 0 0;
+  } */
+  /* section.how_to_earn.cs_pt.text-center{
+    padding-top: 3rem;
+  } */
+  /* .hero-section-wrap h2{
+    font-size: 35px;
+  }
+  .hero-section-wrap p{
+    font-size: 18px;
+  } */
+  .got-rewarded-cards.col-4{
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 30px;
+  }
+  .got-rewarded-cards p{
+      font-size: 18px;
+  }
+  .right_nav .d-flex{
+    display: block !important;
+ }
 }
 
 /* ========================== */
@@ -459,6 +484,10 @@ footer a {
     display: block;
   }
 
+  .row{
+    margin: 0 !important;
+  }
+
 }
 
 /* scroll bar */
@@ -497,4 +526,12 @@ footer a {
 
 .string-value  span{
   color: #5d9ccb !important;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .got-rewarded-cards p {
+    font-size: 18px;
+  }
 }

@@ -17,3 +17,15 @@
   row-gap: 4rem; */
   margin:0 4rem;
 }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .membership_tiers_container{
+     margin-top: 0;
+  }
+  .membership_tiers_container h2{
+       font-size: 30px;
+  }
+  .membership_tiers_container .tables {
+      margin: 0;
+  }
+}

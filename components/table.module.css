@@ -57,5 +57,13 @@
   padding: 0.7rem;
   font-size: 20px;
   color:#2E3823;
+}
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .table th:first-child{
+     font-size: 24px;
+  }
+  .table_cell{
+    font-size: 16px;
+  }
 }
