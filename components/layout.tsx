@@ -12,6 +12,7 @@ export default function Layout({
   blogList,
   entries,
   children,
+  brands,
 }: { header: HeaderProps, footer: FooterProps, page: PageProps, blogPost: Posts, blogList: Posts, entries: Entry, children: ChilderenProps }) {
 
   const [getLayout, setLayout] = useState({ header, footer });
@@ -20,10 +21,11 @@ export default function Layout({
   blogPost && (jsonObj.blog_post = blogPost);
   blogList && (jsonObj.blog_post = blogList);
 
+  brands && (jsonObj.brands = brands);
+
   function buildNavigation(ent: Entry, hd: HeaderProps, ft: FooterProps) {
     let newHeader = { ...hd };
     let newFooter = { ...ft };
-    console.log('newHeader - ',newHeader);
     // if (ent.length !== newHeader.navigation_menu.length) {
     //   ent.forEach((entry) => {
     //     const hFound = newHeader?.navigation_menu.find(

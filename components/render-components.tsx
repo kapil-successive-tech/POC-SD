@@ -4,6 +4,7 @@ import HeroSection from './hero-section';
 import { RenderProps } from "../typescript/component";
 import HowToEarn from './how-to-earn';
 import MembershipTiers from './membership-tiers';
+import Brands from './brands';
 
 export default function RenderComponents(props: RenderProps) {
   const { pageComponents, blogPost, entryUid, contentTypeUid, locale } = props;
@@ -27,7 +28,7 @@ export default function RenderComponents(props: RenderProps) {
           return <MembershipTiers {...component.section_with_tables} key={`component-${key}`} />;
         }
         if (component.our_brands) {
-          return null;
+          return <Brands brands={component.our_brands.brands_reference} />
         }
       })}
     </div>
