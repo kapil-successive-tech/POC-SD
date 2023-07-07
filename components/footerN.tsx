@@ -54,8 +54,8 @@ export default function Footer({ footer, entries }: {footer: FooterProps, entrie
            <div className='container'>
                <div className='footer-nav'>
                     <ul>
-                        {footerData.navigation.link.map(link => {
-                            return <li><a href={link.href} style={{textTransform:'uppercase'}}>{link.title}</a></li>
+                        {footerData.navigation.link.map((link, key) => {
+                            return <li key={`footer-${key}`}><a href={link.href} style={{textTransform:'uppercase'}}>{link.title}</a></li>
                         })}
                     </ul>
                </div>
