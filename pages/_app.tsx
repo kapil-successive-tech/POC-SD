@@ -4,7 +4,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import Layout from '../components/layout';
 import { LanguageProvider } from '../context';
-import { getHeaderRes, getFooterRes, getAllEntries } from '../helper';
+import { getHeaderRes, getFooterRes, getAllEntries, getBrandsRes } from '../helper';
 import 'nprogress/nprogress.css';
 import '../styles/third-party.css';
 import '../styles/style.css';
@@ -80,9 +80,7 @@ MyApp.getInitialProps = async (appContext: any) => {
   const header = await getHeaderRes();
   const footer = await getFooterRes();
   const entries = await getAllEntries();
-// console.log(footer);
   return { ...appProps, header, footer, entries };
-  // return {...appProps, header, entries};
 };
 
 export default MyApp;

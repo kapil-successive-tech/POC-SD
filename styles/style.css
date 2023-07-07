@@ -213,6 +213,15 @@ footer a {
   margin-right: 25px;
 }
 
+.brands {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 80px 0;
+}
+.brand {
+  margin: 20px !important;
+}
+
 /* =================== */
 
 

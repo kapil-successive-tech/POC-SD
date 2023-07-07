@@ -19,6 +19,16 @@ export const getHeaderRes = async () => {
   return response[0][0];
 };
 
+export const getBrandsRes = async (contentTypeUid) => {
+  const response = await Stack.getEntry({
+    contentTypeUid: contentTypeUid,
+    referenceFieldPath: ['page_components.our_brands.brands_reference'],
+  });
+
+  liveEdit && addEditableTags(response[0][0], 'brands', true);
+  return response[0][0];
+};
+
 export const getFooterRes = async () => {
   const response = await Stack.getEntry({
     contentTypeUid: 'footer',
@@ -32,7 +42,7 @@ export const getFooterRes = async () => {
 export const getAllEntries = async () => {
   const response = await Stack.getEntry({
     contentTypeUid: 'page',
-    referenceFieldPath: undefined,
+    referenceFieldPath: ['page_components.our_brands.brands_reference'],
     jsonRtePath: undefined,
   });
   liveEdit &&
@@ -45,6 +55,7 @@ export const getPageRes = async (entryUrl, locale = 'en-us') => {
     contentTypeUid: 'page',
     entryUrl,
     locale,
+    referenceFieldPath: ['page_components.our_brands.brands_reference'],
   });
   liveEdit && addEditableTags(response[0], 'page', true);
   return response[0];

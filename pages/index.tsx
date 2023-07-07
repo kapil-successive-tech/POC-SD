@@ -19,6 +19,7 @@ export default function Home(props: Props) {
       const entryRes = await getPageRes(entryUrl, locale);
       if (!entryRes) throw new Error('Status code 404');
       setEntry(entryRes);
+      
     } catch (error) {
       console.error(error);
     }
