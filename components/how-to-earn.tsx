@@ -7,7 +7,7 @@ const HowToEarn = ({ content }: { content: any }) => {
 
     return (
         <>{content &&
-            <section className="how_to_earn cs_pt text-center">
+            <section className= {styles.how_to_earn}>
                 <div className="container">
                     <h2 className="pb-3">
                         {content.title_h2}
