@@ -185,14 +185,6 @@ footer a {
 .got-rewarded-cards{
   margin-bottom: 25px;
 }
-.brands {
-  display: flex;
-  justify-content: center;
-  margin: 80px 0 80px 0;
-}
-.brand {
-  margin: 20px !important;
-}
 
 /* =================== */
 
@@ -468,8 +460,8 @@ footer a {
   }
 
   body h2 {
-    font-weight: bold;
-    font-size: 20px;
+    /* font-weight: bold; */
+    font-size: 35px;
     line-height: 24px;
     letter-spacing: 0.1px;
   }
@@ -533,5 +525,8 @@ footer a {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .got-rewarded-cards p {
     font-size: 18px;
+  }
+  .got-rewarded-cards figcaption{
+    font-size: 20px;
   }
 }

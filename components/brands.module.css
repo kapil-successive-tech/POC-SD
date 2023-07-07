@@ -1,0 +1,26 @@
+.brands {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0 80px 0;
+  }
+  .brand {
+    margin-right: 50px;
+  }
+  .brand span img{
+    width:210px !important;
+    height: 100px !important;
+    object-fit:scale-down;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .brands{
+        margin: 50px 15px;
+    }
+    .brand {
+        margin-right: 20px;
+    }
+    .brand span img{
+        width:150px !important;
+        height: 70px !important;
+   }
+  }
